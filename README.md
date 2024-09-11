@@ -81,26 +81,39 @@ Every function have some input fields(parameters) to perform the operations:
 1) `Add Liquidity`: The add liquidity function require these parameters:
 
 `amountADesired`: This is the amount you want to contribute for Token A in the liquidity pool.
+
 `amountBDesired`: This is the amount you want to contribute for Token B in the liquidity pool.
+
 `amountAMin`: The minimum amount of Token A that you’re willing to accept in the transaction. If the transaction would result in contributing less than this amount of Token A, the transaction will revert.
+
 `amountBMin`: The minimum amount of Token B that you’re willing to accept in the transaction.
 Similar to amountAMin, this prevents you from adding an undesirably small amount of Token B due to price fluctuations or slippage.
+
 `to`: The address that will receive the liquidity pool (LP) tokens.
+
 `deadline`: The Unix timestamp (in seconds) by which the transaction must be completed. If the transaction is not completed before this deadline, it will revert.
 
 2) `Swap tokens`: The swap function require these parameters:
 
 `amountIn`: The amount of the input token (the token you are swapping from) that you are sending to Uniswap for the swap.
+
 `amountOutMin`: The minimum amount of the output token (the token you are swapping to) that you are willing to accept from the swap. If the actual amount of the output token (e.g., ETH) is less than this value, the transaction will revert. 
+
 `calldata path`: The path of tokens to be swapped.For Example: `path=[TokenA_address, TokenB_address];`
+
 `to`: This is the address where the swapped tokens will be sent after the swap. Typically, this is the user's wallet address.
+
 `deadline`: The Unix timestamp by which the swap must be completed. If the swap is not completed before this timestamp, the transaction will revert.
 
 3) `Remove Liquidity`:  The Remove liquidity function require these parameter.
 
 `liquidity`: The amount of liquidity tokens to be removed from the pool.
+
 `amountAMin`: The minimum amount of token A you are willing to receive when removing liquidity.
+
 `amountBMin`: The minimum amount of token B you are willing to receive when removing liquidity.
+
 `to`: The address that will receive the tokens after removing liquidity.
+
 `deadline`: The Unix timestamp by which the removal of liquidity must be completed.
 
