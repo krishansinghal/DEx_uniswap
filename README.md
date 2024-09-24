@@ -61,7 +61,7 @@ npx hardhat compile
 `To Deploy MyDex.sol`:
 
 ```bash
-npx hardhat run ./script/deploy.js
+npx hardhat run ./scripts/deploy.js
 ```
 The `deploy.js` file contains all the deployed addresses. After the succesful deployment, will  get the MyDex contract Address.
 
